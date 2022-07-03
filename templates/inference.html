@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <br><br><br><br><br>
+    <h2 style="color: black; font-weight: 500;">File uploaded successfully. You have uploaded an image of</h2>
+    <h2 style="color: black; font-weight: 500;">{{name}}</h2>
+    <h2 style="color: black; font-weight: 500; background-color: bisque;">The neural network is confident at: <strong>{{confidence}}%</strong></h2>
+    <h3 style="font-weight: 500;"><centre><a href="/">Try again</a></centre></h3>
+</div>
+
+{% endblock %}
