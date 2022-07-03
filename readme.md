@@ -1,14 +1,3 @@
-# AI Waste Sorting using transfer learning with Pytorch
-U4 Project - Deep Learning for Business - AI&BA - TBS
-Antoine Settelen, Edgar Jullien, Simon Weiss   
-
-~3 weeks development  
-
-
-Check the demo [here](https://ml-app-pytorch.herokuapp.com/).
-
-
-
 ## Introduction
 
 In this project we will develop a classifier to seperate waste into six classes : glass, paper, cardboard, plastic, metal, and trash based on their images. As a result of rapid urbanization and population growth, the amount of waste produced each year in the world is expected to rise to 3.4 billion tons over the next three decades, up from 2.01 billion tons in 2016, according to the World Bank.   
@@ -25,7 +14,7 @@ Automatically classifying the types of waste would effectively :
 
 ### Dataset
 
-The data comes from the dataset [trashnet](https://github.com/garythung/trashnet) for a final project of [Stanford's CS 229: Machine Learning class](http://cs229.stanford.edu)
+The data comes from the dataset for a final project of [Stanford's CS 229: Machine Learning class](http://cs229.stanford.edu)
 the dataset consists of 2527 images:
 - 501 glass
 - 594 paper
@@ -40,22 +29,16 @@ You can find the dataset used in the /dataset folder inside the notebook folder.
 ### Pytorch Learning
 You will find our notebook used to train our model in /notebook folder and its html generated file. You can open it locally our use colab to use GPU instance provided by Google. 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-rC0ingheeVI6kjBm8YBEk9q2NPm3nB6#scrollTo=P1b-eEtXq6cT)  
 First, we configured our own neural network with pytorch and then tested our results with the accuracy score. 
 Then we used ResNet-50 CNN within the transfer learning method. Our maximum score was 97% accuracy. 
 ResNet-50 is a convolutional neural network that is 50 layers deep. You can load a pretrained version of the network trained on more than a million images from the ImageNet database The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals. As a result, the network has learned rich feature representations for a wide range of images.
 Once our model was trained, we exported its weights as a pth file "cnn2.pth" to use it in our web version deployed on heroku. 
 
-## Demo
-
-Check the demo [here](https://ml-app-pytorch.herokuapp.com/). You can use the dataset images for testing but also use your own images. Our model is not perfect and is only the beginning of neural network definition, so it will certainly have incorect predictions on a custom dataset.   
-We will appreciate any recommendations or advices to improve our model! 
-
 ### Screenshots
 
-![Home](https://raw.githubusercontent.com/13w13/AI-Waste-Sorting-Web-App-Pytorch/main/notebook/Screenshot_home.png)
+![Home]
 
-![Classifiction](https://raw.githubusercontent.com/13w13/AI-Waste-Sorting-Web-App-Pytorch/main/notebook/Screenshot_predict.png)
+![Classifiction]
 
 
 ## Installation and local Deployment of the web app
@@ -99,37 +82,6 @@ You need to have Python installed in your computer.
     ```
     flask run -p <port>
     ```
-
-## Getting Started (using Docker)
-
-1. Create a Docker image
-    ```
-    docker build -t flaskml .
-    ```
-    This will create an image with the name `flaskml`. You can replace that with a custom name for your app.
-
-2. Run the docker image
-    ```
-    docker run -d -p 127.0.0.1:5000:80 flaskml
-    ```
-    This will run the app on port `5000`. You can replace that with which ever port that is more suitable.
-
-### Heroku Deployment
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/13w13/AI-Waste-Sorting-Web-App-Pytorch)
-
-- Create Heroku app
-    ```
-    heroku create 
-    git push heroku master
-    ```
-    
-OR
-
-- Add to existing Heroku app
-    ```
-    heroku git:remote -a <your-app-name>
-    git push heroku master
 
 ## Built With
 
